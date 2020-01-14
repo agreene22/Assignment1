@@ -11,7 +11,46 @@ and the net take-home pay for the week.
 #include <iostream>
 using namespace std;
 
-int main(){
+int main(int argc, char **argv){
+  double hourlyWage = 16.00;
+  double overtimeWage = 0;
+  double hoursWorked = 0;
+  double grossPay = 0;
+  double socialSecurity = 0;
+  double federalIncomeTax = 0;
+  double stateIncomeTax = 0;
+  double medicalInsurance = 10;
+  double netTakeHome = 0;
+
+  overtimeWage = hourlyWage*1.5;
+
+  cout << "Enter number of hours worked in a week: " << endl;
+  cin >> hoursWorked;
+
+  if (hoursWorked <= 40){
+    grossPay = hoursWorked*hourlyWage;
+  }else{
+    double overtime = hoursWorked - 40;
+    grossPay = (40*hourlyWage) + (overtime*overtimeWage);
+  }
+  netTakeHome = grossPay;
+
+  socialSecurity = grossPay*0.06;
+  netTakeHome -= socialSecurity;
+
+  federalIncomeTax = grossPay*0.14;
+  netTakeHome -= federalIncomeTax;
+
+  stateIncomeTax = grossPay*0.05;
+  netTakeHome -= stateIncomeTax;
+
+  netTakeHome -= medicalInsurance
+
+  cout << "Worker's gross pay: " << grossPay << endl;
+  cout << "Social Security: " << socialSecurity << endl;
+  cout << "Federal Income Tax: " << federalIncomeTax << endl;
+  cout << "State Income Tax: " << stateIncomeTax << endl;
+  cout << "Net Take Home: " << netTakeHome << endl;
 
   return 0;
 }

@@ -11,7 +11,7 @@ due to fire regulations and tells how many people must be excluded in order to m
 #include <iostream>
 using namespace std;
 
-int main(){
+int main(int argc, char **argv){
   int maxCapacity;
   int numPeople;
   int morePeople;

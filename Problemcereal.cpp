@@ -7,7 +7,7 @@ the number of boxes needed to yield one metric ton of cereal.
 #include <iostream>
 using namespace std;
 
-int main(){
+int main(int argc, char **argv){
   double weight;
   double weightTons;
   int numBoxes;
