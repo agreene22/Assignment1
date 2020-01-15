@@ -14,7 +14,25 @@ such as 0.056, and should use a loop to estimate the price adjusted for inflatio
 #include <iostream>
 using namespace std;
 
-int main(){
+int main(int argc, char **argv){
+  double cost = 0;
+  int numYears = 0;
+  double inflationRate = 0;
+
+  cout << "Enter the cost of the item: " << endl;
+  cin >> cost;
+  cout << "Enter the number of years from now the item will be purchased: " << endl;
+  cin >> numYears;
+  cout << "Enter the inflation rate (as a percentage): " << endl;
+  cin >> inflationRate;
+
+  inflationRate = inflationRate/100;
+
+  for (int i = 0; i < numYears; i++){
+    cost = cost + (cost*inflationRate);
+  }
+
+  cout << "Adjusted Price: $" << cost << endl;
 
   return 0;
 }

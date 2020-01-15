@@ -44,13 +44,13 @@ int main(int argc, char **argv){
   stateIncomeTax = grossPay*0.05;
   netTakeHome -= stateIncomeTax;
 
-  netTakeHome -= medicalInsurance
+  netTakeHome -= medicalInsurance;
 
-  cout << "Worker's gross pay: " << grossPay << endl;
-  cout << "Social Security: " << socialSecurity << endl;
-  cout << "Federal Income Tax: " << federalIncomeTax << endl;
-  cout << "State Income Tax: " << stateIncomeTax << endl;
-  cout << "Net Take Home: " << netTakeHome << endl;
+  cout << "Worker's gross pay: $" << grossPay << endl;
+  cout << "Social Security: $" << socialSecurity << endl;
+  cout << "Federal Income Tax: $" << federalIncomeTax << endl;
+  cout << "State Income Tax: $" << stateIncomeTax << endl;
+  cout << "Net Take Home: $" << netTakeHome << endl;
 
   return 0;
 }
