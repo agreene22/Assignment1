@@ -1,18 +1,13 @@
-/*
-An employee is paid at a rate of $16.00 per hour for regular hours worked in a week.
-Any hours over that are paid at the overtime rate of one and one-half times that.
-From the worker’s gross pay, 6% is withheld for Social Security tax, 14% is withheld
-for federal income tax, 5% is withheld for state income tax, and $10 per week is withheld
-for medical insurance. Write a program that will read in the number of hours worked in a
-week as input and that will then output the worker’s gross pay, each withholding amount,
-and the net take-home pay for the week.
+/* Anna Greene
+Employee Pay code
+Calculates employees overall pay depending on number of hours worked and their net income
  */
 
 #include <iostream>
 using namespace std;
 
 int main(int argc, char **argv){
-  double hourlyWage = 16.00;
+  double hourlyWage = 16.00; //Declaring and initliazing variables
   double overtimeWage = 0;
   double hoursWorked = 0;
   double grossPay = 0;
@@ -22,30 +17,31 @@ int main(int argc, char **argv){
   double medicalInsurance = 10;
   double netTakeHome = 0;
 
-  overtimeWage = hourlyWage*1.5;
+  overtimeWage = hourlyWage*1.5; //Calculating the wage for overtime hours
 
-  cout << "Enter number of hours worked in a week: " << endl;
-  cin >> hoursWorked;
+  cout << "Enter number of hours worked in a week: " << endl; //Prompting user for number of hours worked
+  cin >> hoursWorked; //Getting input from the user
 
-  if (hoursWorked <= 40){
-    grossPay = hoursWorked*hourlyWage;
+  if (hoursWorked <= 40){ //Checking for overtime hours
+    grossPay = hoursWorked*hourlyWage; //Calculating regular hour wage
   }else{
     double overtime = hoursWorked - 40;
-    grossPay = (40*hourlyWage) + (overtime*overtimeWage);
+    grossPay = (40*hourlyWage) + (overtime*overtimeWage); //Calculating wage with overtime hours
   }
-  netTakeHome = grossPay;
+  netTakeHome = grossPay; //assigning take home with gross pay amount
 
-  socialSecurity = grossPay*0.06;
-  netTakeHome -= socialSecurity;
+  socialSecurity = grossPay*0.06; // Calcutaing social security
+  netTakeHome -= socialSecurity; //Subtracting social security tax from take home
 
-  federalIncomeTax = grossPay*0.14;
-  netTakeHome -= federalIncomeTax;
+  federalIncomeTax = grossPay*0.14; // Calculating federal income tax
+  netTakeHome -= federalIncomeTax; //Subtracting federal income tax from take home
 
-  stateIncomeTax = grossPay*0.05;
-  netTakeHome -= stateIncomeTax;
+  stateIncomeTax = grossPay*0.05; // Calculating state income tax
+  netTakeHome -= stateIncomeTax; //Subtracting state income tax from take home
 
-  netTakeHome -= medicalInsurance;
+  netTakeHome -= medicalInsurance; //Subtracting $10 for medical insurance from take home
 
+  // Displaying all final calculations to the user
   cout << "Worker's gross pay: $" << grossPay << endl;
   cout << "Social Security: $" << socialSecurity << endl;
   cout << "Federal Income Tax: $" << federalIncomeTax << endl;

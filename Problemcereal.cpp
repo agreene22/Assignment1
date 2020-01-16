@@ -1,24 +1,23 @@
-/*
-A metric ton is 35,273.92 ounces. Write a program that will read the weight (console input)
-of a package of breakfast cereal in ounces and output the weight in metric tons as well as
-the number of boxes needed to yield one metric ton of cereal.
+/* Anna Greene
+Cereal Problem Code
+Converts the weight of a package of breakfast cereal and outputs the weight in tons and number of boxes needed for one ton.
  */
 
 #include <iostream>
 using namespace std;
 
 int main(int argc, char **argv){
-  double weight;
-  double weightTons;
-  int numBoxes;
+  double weight = 0; //declaring and initializing variables
+  double weightTons = 0;
+  int numBoxes = 0;
 
-  cout << "Enter the weight of a package of breakfast cereal: " << endl;
-  cin >> weight;
+  cout << "Enter the weight of a package of breakfast cereal: " << endl; //Prompting the user to enter the weight
+  cin >> weight; //Reading in users input for weight
 
-  weightTons = weight/35273.92;
-  numBoxes = 35273.92/weightTons; //CHECK IF THIS IS CORRECT
-  cout << "Weight in Tons: " << weightTons << endl;
-  cout << "Number of boxes needed to yield one metric ton of cereal: " << numBoxes << endl;
+  weightTons = weight/35273.92; //Converting the weight to tons
+  numBoxes = 35273.92/weightTons; //Finding how many boxes yield one ton
+  cout << "Weight in Tons: " << weightTons << endl; // Displaying the weight in tons to the user
+  cout << "Number of boxes needed to yield one metric ton of cereal: " << numBoxes << endl; // Displaying number of boxes
 
   return 0;
 }
